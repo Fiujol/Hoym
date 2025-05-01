@@ -5,7 +5,7 @@ jobs:
         type: command_line
         commands: |
           apt-get update
-          apt-get install -y git python3
+          apt-get install -y git python3 unzip
           git clone https://github.com/Fiujol/android || true
         execution:
           platform: docker
