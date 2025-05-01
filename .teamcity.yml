@@ -1,5 +1,0 @@
-jobs:
-  Job1:
-    name: Job 1
-    steps: []
-    runs-on: Linux-Medium
