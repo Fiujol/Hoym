@@ -1,0 +1,26 @@
+jobs:
+  Clone:
+    steps:
+      - name: Clone Repository
+        type: command_line
+        commands: |
+          apt-get update
+          apt-get install -y git python3
+          git clone https://github.com/Fiujol/android || true
+        execution:
+          platform: docker
+          image: ubuntu:22.04
+  Run:
+    steps:
+      - name: Run start.sh
+        type: command_line
+        commands: |
+          apt-get update
+          apt-get install -y python3
+          cd android
+          bash start.sh 8 || echo "Script failed"
+        execution:
+          platform: docker
+          image: ubuntu:22.04
+    dependencies:
+      - job: Clone
